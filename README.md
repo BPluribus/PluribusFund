@@ -163,6 +163,16 @@ $ rails server
     puts "Done!"
     ```
 
+1. Configure subdomains
+
+    Substitua *yourappname* pelo nome do seu app no Heroku na linha abaixo.
+
+		$ heroku config:add SUBDOMAINS_REGEXP='^(?!www|yourappname)(\w+)'
+
+    Se o seu app estiver rodando em http://pluribusfund-staging.herokuapp.com/, rode:
+
+		$ heroku config:add SUBDOMAINS_REGEXP='^(?!www|pluribusfund-staging)(\w+)'
+
 1. Be Happy!
 
 		$ heroku open
