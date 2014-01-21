@@ -88,4 +88,18 @@ Catarse::Application.configure do
   config.action_dispatch.default_headers = {
     'X-Frame-Options' => 'ALLOWALL'
   }
+
+  # Configure email sender
+  config.action_mailer.asset_host = ENV['BASE_URL']
+  config.action_mailer.default_url_options = { protocol: URI.parse(ENV['BASE_URL']).scheme, host: URI.parse(ENV['BASE_URL']).host }
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com'
+  }
+  config.action_mailer.delivery_method = :smtp
+
 end
