@@ -217,6 +217,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    jumpup (0.0.2)
     jwt (0.1.8)
       multi_json (>= 1.5)
     kaminari (0.15.0)
@@ -502,6 +503,7 @@ DEPENDENCIES
   inherited_resources (~> 1.4.1)
   jasmine
   jquery-rails
+  jumpup (= 0.0.2)
   kaminari
   launchy
   letter_opener
