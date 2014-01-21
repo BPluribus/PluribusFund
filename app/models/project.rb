@@ -20,7 +20,12 @@ class Project < ActiveRecord::Base
   has_and_belongs_to_many :channels
   has_one :project_total
   has_many :rewards
-  accepts_nested_attributes_for :rewards
+
+  begin
+    accepts_nested_attributes_for :rewards
+  rescue
+    # this rescue is to fix assets:precompilation on Heroku
+  end
 
   catarse_auto_html_for field: :about, video_width: 600, video_height: 403
 
