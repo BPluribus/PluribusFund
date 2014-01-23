@@ -127,6 +127,7 @@ group :test, :development do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'pry'
   gem 'jumpup', '0.0.2'
+  gem 'jumpup-heroku', github: 'Helabs/jumpup-heroku'
 end
 
 group :test do

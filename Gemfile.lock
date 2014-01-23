@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/Helabs/jumpup-heroku.git
+  revision: a90af0f728a33fe89c2082c053ac4c46bf5056c4
+  specs:
+    jumpup-heroku (0.0.3)
+
+GIT
   remote: git://github.com/bernat/best_in_place.git
   revision: 366413be357d65cdf47031e928aea969f72e3659
   branch: rails-4
@@ -504,6 +510,7 @@ DEPENDENCIES
   jasmine
   jquery-rails
   jumpup (= 0.0.2)
+  jumpup-heroku!
   kaminari
   launchy
   letter_opener
