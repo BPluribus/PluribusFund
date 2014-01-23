@@ -14,3 +14,4 @@ pt:
         inputs:
           submit: 'Fazer login'
           facebook: 'Entrar com Facebook'
+          google: 'Entrar com Google'
