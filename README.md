@@ -174,6 +174,28 @@ $ rails server
 
 		$ heroku open
 
+### Develoment Cycle
+
+1. Go to `pluribusgund` branch:
+
+		$ git checkout pluribusfund
+
+1. Do the modifications you want and commit them saying what the commit do. Example:
+
+		$ git commit -am "changes the text of homepage"
+
+1. To push the code to the repository and to deploy to staging, run:
+
+		$ rake integrate
+
+    **ATENTION: You should NOT run `$ git push`. just use the command above!**
+
+### Gotchas
+
+1. To have all specs running ans passing your computer must be configured with timezone. To set it on Mac OS:
+
+		$ sudo systemsetup -settimezone America/Sao_Paulo
+
 ## Catarse
 
 This code war forked from Catarse, the first crowdfunding platform from Brazil
