@@ -90,8 +90,8 @@ Catarse::Application.configure do
   }
 
   # Configure email sender
-  config.action_mailer.asset_host = ENV['BASE_URL']
-  config.action_mailer.default_url_options = { protocol: URI.parse(ENV['BASE_URL']).scheme, host: URI.parse(ENV['BASE_URL']).host }
+  config.action_mailer.asset_host = ENV['BASE_URL'] unless ENV['BASE_URL'].nil?
+  config.action_mailer.default_url_options = { protocol: URI.parse(ENV['BASE_URL']).scheme, host: URI.parse(ENV['BASE_URL']).host } unless ENV['BASE_URL'].nil?
   config.action_mailer.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
