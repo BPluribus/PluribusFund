@@ -176,7 +176,7 @@ $ rails server
 
 ### Develoment Cycle
 
-1. Go to `pluribusgund` branch:
+1. Go to `pluribusfund` branch:
 
 		$ git checkout pluribusfund
 
@@ -188,7 +188,7 @@ $ rails server
 
 		$ rake integrate
 
-    **ATENTION: You should NOT run `$ git push`. just use the command above!**
+    **ATTENTION: You should NOT run `$ git push`. Never! Use the command above!**
 
 ### Gotchas
 
