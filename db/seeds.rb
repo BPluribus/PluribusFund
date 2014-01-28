@@ -53,7 +53,6 @@ puts 'Seeding the database...'
   facebook_url: "http://facebook.com/pluribusfund",
   twitter_url: 'http://twitter.com/pluribusfund',
   twitter_username: "pluribusfund",
-  mailchimp_url: "https://us3.api.mailchimp.com/2.0/",
   catarse_fee: '0.05',
   support_forum: 'http://support.pluribusfund.com/',
   base_domain: 'pluribusfund.com',
