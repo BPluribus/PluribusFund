@@ -42,7 +42,7 @@ puts 'Seeding the database...'
 
 {
   company_name: 'Pluribus Fund',
-  company_logo: 'https://www.dropbox.com/s/m10p9cen53ie7fb/logothumb.png',
+  company_logo: 'http://staging.pluribusfund.com/assets/pluribusfund-logo.png',
   host: 'staging.pluribusfund.com',
   base_url: "http://staging.pluribusfund.com",
   email_contact: 'contact@pluribusfund.com',
