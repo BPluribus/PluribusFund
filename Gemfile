@@ -112,8 +112,8 @@ group :production do
   # Using dalli and memcachier have not presented significative performance gains
   # Probably this is due to our pattern of cache usage
   # + the lack of concurrent procs in our deploy
-  #gem 'memcachier'
-  #gem 'dalli'
+  gem 'memcachier'
+  gem 'dalli'
 end
 group :development do
   gem "letter_opener"
