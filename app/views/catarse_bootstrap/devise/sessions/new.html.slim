@@ -16,6 +16,12 @@
           p
             = t('or')
 
+      .large-11.columns.large-centered
+        = link_to t('pages.login.form.inputs.google'), user_omniauth_authorize_path(provider: :google_oauth2, locale: nil), class: [:button, :facebook, 'large-12', 'columns']
+        .separator
+          p
+            = t('or')
+
       .clearfix
 
       .large-11.large-centered.columns
