@@ -103,7 +103,7 @@ Catarse::Application.configure do
   config.action_mailer.delivery_method = :smtp
 
   if ENV['HTTP_BASIC_PASSWORD']
-    config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging") do |u, p|
+    config.middleware.insert_before(::Rack::Runtime, "::Rack::Auth::Basic", "Staging") do |u, p|
       [u, p] == ['pluribusfund', ENV['HTTP_BASIC_PASSWORD']]
     end
   end
