@@ -97,7 +97,7 @@ describe Projects::ContributionsController do
       let(:contribution){ create(:contribution, value: 10.00, credits: true, project: project, state: 'pending', user: user) }
       its(:body){ should =~ /#{I18n.t('projects.contributions.edit.title')}/ }
       its(:body){ should =~ /#{project.name}/ }
-      its(:body){ should =~ /R\$ 10/ }
+      its(:body){ should =~ /\$ 10/ }
     end
   end
 
