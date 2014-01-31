@@ -24,9 +24,7 @@ Catarse::Application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  mount CatarsePaypalExpress::Engine => "/", as: :catarse_paypal_express
-  mount CatarseMoip::Engine => "/", as: :catarse_moip
-#  mount CatarseWepay::Engine => "/", as: :catarse_wepay
+  mount CatarseWepay::Engine => "/", as: :catarse_wepay
 
   # Channels
   constraints subdomain: Regexp.new(ENV['SUBDOMAINS_REGEXP'] || '^(?!www|secure|test|local)(\w+)') do
@@ -99,7 +97,7 @@ Catarse::Application.routes.draw do
       get :unsubscribe_notifications
     end
     collection do
-      get :uservoice_gadget
+      get :CatarseWepay_gadget
     end
     resources :contributions, controller: 'users/contributions', only: [:index] do
       member do

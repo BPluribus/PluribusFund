@@ -29,9 +29,9 @@ gem 'schema_associations'
 gem 'chartkick'
 
 # Payment engines
-gem 'catarse_paypal_express', '~> 2.2.0'
-gem 'catarse_moip', '~> 2.3.0'
-# gem 'catarse_wepay', '~> 0.0.1'
+# gem 'catarse_paypal_express', '~> 2.1.2'
+# gem 'catarse_moip', '~> 2.2.1'
+gem 'catarse_wepay', '0.0.1'
 
 # Decorators
 gem 'draper'
@@ -79,14 +79,12 @@ gem 'inherited_resources',        '~> 1.4.1'
 gem 'has_scope', '~> 0.6.0.rc'
 gem 'spectator-validates_email',  require: 'validates_email'
 gem 'video_info', '>= 1.1.1'
-gem 'httparty', '~> 0.6.1' # this version is required by moip gem, otherwise payment confirmation will break
 
 # Translations
 gem 'http_accept_language'
 gem 'routing-filter', '~> 0.4.0.pre'
 
 # Payment
-gem 'moip', github: 'catarse/moip-ruby'
 gem 'httpclient',     '>= 2.2.5'
 
 group :production do
