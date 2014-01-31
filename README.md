@@ -86,22 +86,6 @@ You cane wee our webite at: [http://www.pluribusfund.com/](http://www.pluribusfu
     CREATE FUNCTION
     ...
 
-**IMPORTANT**: Make sure you have postgresql-contrib ([Aditional Modules](http://www.postgresql.org/docs/9.3/static/contrib.html)) installed on your system.
-
-
-```bash
-$ git clone https://github.com/catarse/catarse.git
-$ cd catarse
-$ cp config/database.sample.yml config/database.yml
-$ vim config/database.yml
-# change username/password and save
-$ bundle install
-$ rake db:create db:migrate db:seed
-$ rails server
-```
-
-### Translations
-
     ```
 
     Run:
