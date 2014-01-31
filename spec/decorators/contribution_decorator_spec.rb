@@ -21,12 +21,12 @@ describe ContributionDecorator do
   describe "#display_value" do
 
     context "when the value has decimal places" do
-      subject{ build(:backer, value: 99.99).display_value }
+      subject{ build(:contribution, value: 99.99).display_value }
       it{ should == "$ 100" }
     end
 
     context "when the value does not have decimal places" do
-      subject{ build(:backer, value: 1).display_value }
+      subject{ build(:contribution, value: 1).display_value }
       it{ should == "$ 1" }
     end
   end

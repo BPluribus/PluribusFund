@@ -81,7 +81,7 @@ describe UserDecorator do
       before do
         create(:contribution, state: 'confirmed', user: subject, value: 500.0)
       end
-      its(:display_total_of_backs) { should == '$ 500'}
+      its(:display_total_of_contributions) { should == '$ 500'}
     end
   end
 end
