@@ -7,7 +7,7 @@ You cane wee our webite at: [http://www.pluribusfund.com/](http://www.pluribusfu
 
 1. Clone the project to your machine:
 
-		$ git clone git@github.com:BPluribus81/PluFund.git
+		$ git clone git@github.com:BPluribus/PluribusFund.git
 
 1. Install [Librarian-Chef](https://github.com/applicationsonline/librarian-chef)
 
@@ -25,11 +25,15 @@ You cane wee our webite at: [http://www.pluribusfund.com/](http://www.pluribusfu
 
 1. Copy config/database.sample.yml to config/database.yml
 
+1. Setup the database
+
+		$ rake db:setup && rake db:migrate
+
 1. Run specs
 
 		$ rake
 
-    All tests should pass.
+    All tests should pass. If not, see gotchas below.
 
 1. Be Happy!
 
@@ -158,15 +162,23 @@ You cane wee our webite at: [http://www.pluribusfund.com/](http://www.pluribusfu
 
 		$ heroku open
 
-### Develoment Cycle
+### Development and Deployment Cycle
 
-1. Go to `pluribusfund` branch:
+1. Go to master branch
 
-		$ git checkout pluribusfund
+		$ git checkout master
+
+1. Get the latest modifications:
+
+		$ git pull --rebase
 
 1. Do the modifications you want and commit them saying what the commit do. Example:
 
 		$ git commit -am "changes the text of homepage"
+
+1. Adds Heroku repository (just one time)
+
+		$ git remote add heroku git@heroku.com:pluribusfund-production.git
 
 1. To push the code to the repository and to deploy to staging, run:
 
@@ -179,6 +191,12 @@ You cane wee our webite at: [http://www.pluribusfund.com/](http://www.pluribusfu
 1. To have all specs running ans passing your computer must be configured with timezone. To set it on Mac OS:
 
 		$ sudo systemsetup -settimezone America/Sao_Paulo
+
+1. There are some deprecation warnings, don't worry with that.
+
+### Credits
+
+The first version of pluribusfund website was written by [Rafael Lima](http://rafael.adm.br)
 
 ## Catarse
 
