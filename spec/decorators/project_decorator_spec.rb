@@ -14,17 +14,17 @@ describe ProjectDecorator do
 
     context "when there is more than 1 day to go" do
       let(:expires_at){ Time.zone.now + 2.days }
-      it{ should == {:time=>2, :unit=>"dias"} }
+      it{ should == {time:2, unit:"dias"} }
     end
 
     context "when there is less than 1 day to go" do
       let(:expires_at){ Time.zone.now + 13.hours }
-      it{ should == {:time=>13, :unit=>"horas"} }
+      it{ should == {time:13, unit:"horas"} }
     end
 
     context "when there is less than 1 hour to go" do
       let(:expires_at){ Time.zone.now + 59.minutes }
-      it{ should == {:time=>59, :unit=>"minutos"} }
+      it{ should == {time:59, unit:"minutos"} }
     end
   end
 
@@ -155,22 +155,33 @@ describe ProjectDecorator do
     end
   end
 
-  describe "#successful_flag" do
+  describe "#status_flag" do
     let(:project) { create(:project) }
 
     context "When the project is successful" do
       it "should return a successful image flag when the project is successful" do
         project.stub(:successful?).and_return(true)
 
-        expect(project.successful_flag).to eq('<div class="successful_flag"><img alt="Successful" src="/assets/channels/successful.png" /></div>')
+        expect(project.status_flag).to eq("<div class=\"status_flag\"><img alt=\"Successful.#{I18n.locale}\" src=\"/assets/successful.#{I18n.locale}.png\" /></div>")
       end
     end
 
     context "When the project was not successful" do
-      it "should not return an image, but nil" do
-        expect(project.successful_flag).to eq(nil)
+      it "should return a not successful image flag when the project is not successful" do
+        project.stub(:failed?).and_return(true)
+
+        expect(project.status_flag).to eq("<div class=\"status_flag\"><img alt=\"Not successful.#{I18n.locale}\" src=\"/assets/not_successful.#{I18n.locale}.png\" /></div>")
       end
     end
+
+    context "When the project is in waiting funds" do
+      it "should return a waiting funds image flag when the project is waiting funds" do
+        project.stub(:waiting_funds?).and_return(true)
+
+        expect(project.status_flag).to eq("<div class=\"status_flag\"><img alt=\"Waiting confirmation.#{I18n.locale}\" src=\"/assets/waiting_confirmation.#{I18n.locale}.png\" /></div>")
+      end
+    end
+
   end
 end
 

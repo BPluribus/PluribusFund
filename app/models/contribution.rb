@@ -22,9 +22,9 @@ class Contribution < ActiveRecord::Base
   scope :payer_email_contains, ->(term) { where("unaccent(upper(payer_email)) LIKE ('%'||unaccent(upper(?))||'%')", term) }
   scope :project_name_contains, ->(term) { joins(:project).where("unaccent(upper(projects.name)) LIKE ('%'||unaccent(upper(?))||'%')", term) }
   scope :anonymous, -> { where(anonymous: true) }
-  scope :credits, -> { where(credits: true) }
+  scope :credits, -> { where("credits OR lower(payment_method) = 'credits'") }
   scope :not_anonymous, -> { where(anonymous: false) }
-  scope :confirmed_today, -> { with_state('confirmed').where(['confirmed_at >= ? and confirmed_at <= ?', Time.current.beginning_of_day, Time.current.end_of_day]) }
+  scope :confirmed_today, -> { with_state('confirmed').where("contributions.confirmed_at::date = current_date ") }
 
   scope :can_cancel, -> { where("contributions.can_cancel") }
 
@@ -40,6 +40,10 @@ class Contribution < ActiveRecord::Base
   def self.between_values(start_at, ends_at)
     return scoped unless start_at.present? && ends_at.present?
     where("value between ? and ?", start_at, ends_at)
+  end
+
+  def slip_payment?
+    payment_choice.try(:downcase) == 'boletobancario'
   end
 
   def decorator
@@ -90,6 +94,14 @@ class Contribution < ActiveRecord::Base
       phone_number: address_phone_number,
       cpf: payer_document
     })
+  end
+
+  def notify_to_contributor(template_name)
+    Notification.notify_once(template_name,
+      self.user,
+      { contribution_id: self.id },
+      contribution: self
+    )
   end
 
   # Used in payment engines

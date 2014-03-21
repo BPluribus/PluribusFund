@@ -23,8 +23,9 @@ Catarse::Application.routes.draw do
   constraints check_user_admin do
     mount Sidekiq::Web => '/sidekiq'
   end
-
+  
   mount CatarseWepay::Engine => "/", as: :catarse_wepay
+
 
   # Channels
   constraints subdomain: Regexp.new(ENV['SUBDOMAINS_REGEXP'] || '^(?!www|secure|test|local)(\w+)') do
@@ -95,6 +96,7 @@ Catarse::Application.routes.draw do
     resources :projects, controller: 'users/projects', only: [ :index ]
     member do
       get :unsubscribe_notifications
+      get :credits
     end
     collection do
       get :CatarseWepay_gadget

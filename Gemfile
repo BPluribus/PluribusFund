@@ -53,10 +53,6 @@ gem 'devise', '~> 3.0.2'
 gem 'ezcrypto'
 gem 'pundit'
 
-# See https://github.com/ryanb/cancan/tree/2.0 for help about this
-# In resume: this version of cancan allow checking for authorization on specific fields on the model
-gem 'cancan', github: 'ryanb/cancan', branch: '2.0', ref: 'f1cebde51a87be149b4970a3287826bb63c0ac0b'
-
 # Email marketing
 gem 'catarse_mailchimp', git: 'git://github.com/catarse/catarse_mailchimp', ref: '2ed4f39'
 
@@ -148,6 +144,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "compass-rails"
 gem 'uglifier'
 gem 'compass-960-plugin'
+gem 'sprockets', '~> 2.10.1'
 
 # FIXME: Not-anymore-on-development
 # Gems that are with 1 or more years on the vacuum

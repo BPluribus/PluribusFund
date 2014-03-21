@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/Helabs/jumpup-heroku.git
-  revision: 795baf07734074f8dafe2d297b746e64a50c7c9c
+  revision: b89c30f9ef3e54be00738e6040ada37344632b3e
   specs:
-    jumpup-heroku (0.0.3)
+    jumpup-heroku (0.0.4)
 
 GIT
   remote: git://github.com/bernat/best_in_place.git
@@ -21,14 +21,6 @@ GIT
     catarse_mailchimp (0.0.1)
       mailchimp
       supermodel
-
-GIT
-  remote: git://github.com/ryanb/cancan.git
-  revision: f1cebde51a87be149b4970a3287826bb63c0ac0b
-  ref: f1cebde51a87be149b4970a3287826bb63c0ac0b
-  branch: 2.0
-  specs:
-    cancan (2.0.0.alpha)
 
 GEM
   remote: https://rubygems.org/
@@ -59,20 +51,22 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
-    arel (4.0.1)
-    atomic (1.1.14)
+    arel (4.0.2)
+    atomic (1.1.16)
     auto_html (1.4.2)
       RedCloth
       redcarpet
       rinku
       tag_helper
-    bcrypt-ruby (3.1.2)
+    bcrypt (3.1.7)
+    bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    browser (0.3.2)
+    browser (0.4.1)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -89,10 +83,10 @@ GEM
       wepay (= 0.0.1)
     celluloid (0.15.2)
       timers (~> 1.1.0)
-    chartkick (1.2.1)
-    childprocess (0.4.0)
+    chartkick (1.2.2)
+    childprocess (0.5.1)
       ffi (~> 1.0, >= 1.0.11)
-    chunky_png (1.2.9)
+    chunky_png (1.3.0)
     cliver (0.3.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -102,22 +96,22 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    compass (0.12.2)
+    compass (0.12.4)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
-      sass (~> 3.1)
+      sass (~> 3.2.17)
     compass-960-plugin (0.10.4)
       compass (>= 0.10.0)
-    compass-rails (1.1.3)
+    compass-rails (1.1.7)
       compass (>= 0.12.2)
-    connection_pool (1.2.0)
+      sprockets (<= 2.11.0)
+    connection_pool (2.0.0)
     coveralls (0.7.0)
       multi_json (~> 1.3)
       rest-client
       simplecov (>= 0.7)
       term-ansicolor
       thor
-    curb (0.8.5)
     dalli (2.7.0)
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
@@ -127,40 +121,44 @@ GEM
       railties (>= 3.2.6, < 5)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-    docile (1.1.2)
-    dotenv (0.9.0)
+    docile (1.1.3)
+    dotenv (0.10.0)
     draper (1.3.0)
       actionpack (>= 3.0)
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0.3)
     erubis (2.7.0)
-    excon (0.31.0)
+    excon (0.32.1)
     execjs (2.0.2)
     ezcrypto (0.7.2)
-    factory_girl (4.3.0)
+    factory_girl (4.4.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.3.0)
-      factory_girl (~> 4.3.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     fakeweb (1.3.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    feedzirra (0.7.0)
-      curb (~> 0.8.1)
-      loofah (~> 1.2.1)
-      sax-machine (~> 0.2.1)
+    feedzirra (0.8.0)
     ffi (1.9.3)
-    fog (1.19.0)
+    fog (1.21.0)
+      fog-brightbox
+      fog-core (~> 1.21, >= 1.21.1)
+      fog-json
+      nokogiri (~> 1.5, >= 1.5.11)
+    fog-brightbox (0.0.1)
+      fog-core
+      fog-json
+    fog-core (1.21.1)
       builder
-      excon (~> 0.31.0)
+      excon (~> 0.32)
       formatador (~> 0.2.0)
       mime-types
-      multi_json (~> 1.0)
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
-      nokogiri (~> 1.5)
-      ruby-hmac
+    fog-json (1.0.0)
+      multi_json (~> 1.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
@@ -168,7 +166,7 @@ GEM
     formtastic (2.2.1)
       actionpack (>= 3.0)
     fssm (0.2.10)
-    google-analytics-rails (0.0.4)
+    google-analytics-rails (0.0.5)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -179,7 +177,7 @@ GEM
     hike (1.2.3)
     htmlentities (4.3.1)
     http_accept_language (2.0.1)
-    httparty (0.12.0)
+    httparty (0.13.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     httpauth (0.2.1)
@@ -204,13 +202,11 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.8.1)
+    kgio (2.9.2)
     launchy (2.4.2)
       addressable (~> 2.3)
     letter_opener (1.2.0)
       launchy (~> 2.2)
-    loofah (1.2.1)
-      nokogiri (>= 1.4.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -221,12 +217,12 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    multi_json (1.8.4)
+    multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.7.0)
+    net-ssh (2.8.0)
     newrelic_rpm (3.7.1.188)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -255,7 +251,7 @@ GEM
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
-    paper_trail (3.0.0)
+    paper_trail (3.0.1)
       activerecord (>= 3.0, < 5.0)
       activesupport (>= 3.0, < 5.0)
     pg (0.17.1)
@@ -263,25 +259,25 @@ GEM
       activerecord (>= 3.1)
       activesupport (>= 3.1)
       arel
-    phantomjs (1.9.2.1)
+    phantomjs (1.9.7.0)
     poltergeist (1.5.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
-    polyglot (0.3.3)
+    polyglot (0.3.4)
     postgres-copy (0.8.0)
       activerecord (~> 4.0)
       pg
       rails (~> 4.0)
       responders
-    protected_attributes (1.0.5)
+    protected_attributes (1.0.7)
       activemodel (>= 4.0.1, < 5.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pundit (0.2.1)
+    pundit (0.2.2)
       activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-protection (1.5.2)
@@ -308,11 +304,11 @@ GEM
       activesupport (= 4.0.2)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    raindrops (0.12.0)
+    raindrops (0.13.0)
     rake (10.1.1)
-    ranked-model (0.3)
+    ranked-model (0.4.0)
       activerecord (>= 3.1.12)
-    redcarpet (3.0.0)
+    redcarpet (3.1.1)
     redis (3.0.7)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
@@ -325,10 +321,10 @@ GEM
     rmagick (2.13.2)
     routing-filter (0.4.0.pre)
       actionpack
-    rspec-core (2.14.7)
-    rspec-expectations (2.14.4)
+    rspec-core (2.14.8)
+    rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.4)
+    rspec-mocks (2.14.6)
     rspec-rails (2.14.1)
       actionpack (>= 3.0)
       activemodel (>= 3.0)
@@ -337,23 +333,21 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    ruby-hmac (0.4.0)
     ruby-ole (1.2.11.7)
-    rubyzip (1.1.0)
-    sass (3.2.14)
-    sass-rails (4.0.1)
+    rubyzip (1.1.2)
+    sass (3.2.17)
+    sass-rails (4.0.2)
       railties (>= 4.0.0, < 5.0)
-      sass (>= 3.1.10)
+      sass (~> 3.2.0)
+      sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0.0)
-    sax-machine (0.2.1)
-      nokogiri (~> 1.6.0)
     schema_associations (1.2.0)
       schema_plus (>= 1.2.0)
-    schema_plus (1.3.2)
+    schema_plus (1.4.1)
       rails (>= 3.2)
       valuable
-    selenium-webdriver (2.39.0)
-      childprocess (>= 0.2.5)
+    selenium-webdriver (2.40.0)
+      childprocess (>= 0.5.0)
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0.4)
@@ -384,15 +378,15 @@ GEM
     slim (2.0.2)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
-    slim-rails (2.1.0)
+    slim-rails (2.1.2)
       actionpack (>= 3.0, < 4.1)
       activesupport (>= 3.0, < 4.1)
       railties (>= 3.0, < 4.1)
       slim (~> 2.0)
-    slop (3.4.7)
+    slop (3.5.0)
     spectator-validates_email (0.2.0)
       activemodel (>= 3.0.0)
-    spreadsheet (0.9.6)
+    spreadsheet (0.9.7)
       ruby-ole (>= 1.0)
     sprockets (2.10.1)
       hike (~> 1.2)
@@ -408,30 +402,30 @@ GEM
       activemodel (>= 3.0.0.beta)
     tag_helper (0.0.3)
     temple (0.6.7)
-    term-ansicolor (1.2.2)
-      tins (~> 0.8)
+    term-ansicolor (1.3.0)
+      tins (~> 1.0)
     thor (0.18.1)
-    thread_safe (0.1.3)
-      atomic
+    thread_safe (0.3.1)
+      atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
     timecop (0.7.1)
     timers (1.1.0)
-    tins (0.13.1)
-    to_xls (1.5.2)
+    tins (1.0.1)
+    to_xls (1.5.3)
       spreadsheet
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.38)
-    uglifier (2.4.0)
+    tzinfo (0.3.39)
+    uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.8.1)
+    unicorn (4.8.2)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
     valuable (0.9.8)
-    video_info (2.0.2)
+    video_info (2.3.0)
       addressable
       htmlentities
       multi_json
@@ -454,7 +448,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   browser
-  cancan!
   capybara (~> 2.1.0)
   carrierwave (~> 0.8.0)
   catarse_mailchimp!
@@ -520,6 +513,7 @@ DEPENDENCIES
   sinatra
   slim-rails
   spectator-validates_email
+  sprockets (~> 2.10.1)
   state_machine
   timecop (= 0.7.1)
   to_xls

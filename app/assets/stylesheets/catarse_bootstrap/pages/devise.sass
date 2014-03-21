@@ -21,10 +21,24 @@
     width: 22px
     height: 10px
     margin: .9em .4em 0 0
-    &.close
-      background: url('/assets/catarse_bootstrap/feedback-close.png') left top no-repeat
-    &.open
-      background: url('/assets/catarse_bootstrap/feedback-open.png') left top no-repeat
+    &.text
+      width: 145px
+      margin: 2px 0 18px
+      float: left
+  .close-arrow
+    background: url("/assets/catarse_bootstrap/catarse-assets.png") no-repeat scroll -102px -236px transparent
+    display: inline-block
+    width: 15px
+    height: 15px
+    &:hover
+      background: url("/assets/catarse_bootstrap/catarse-assets.png") no-repeat scroll -67px -236px transparent
+  .open-arrow
+    background: url("/assets/catarse_bootstrap/catarse-assets.png") no-repeat scroll -101px -82px transparent
+    display: inline-block
+    width: 15px
+    height: 15px
+    &:hover
+      background: url("/assets/catarse_bootstrap/catarse-assets.png") no-repeat scroll -136px -82px transparent
   .icon
     background: url('/assets/catarse_bootstrap/feedback-key.png') left top no-repeat
     width: 71px
@@ -32,7 +46,7 @@
     display: block
     margin: 0 auto
   p
-    font-weight: bold
+    font-weight: 700
     padding: .6em .7em
     margin: 0
     text-align: center
@@ -56,7 +70,7 @@
     display: none
 
   .separator
-    border-top: 1px solid $gray-two
+    border-top: 1px solid $border-strong
     height: 1px
     margin: 2.1em 0
     text-align: center
@@ -71,6 +85,8 @@
       margin: 0 auto
       position: relative
       top: -11px
+  span.error
+    display: none
 
   .button.success
     margin-top: 1.5em

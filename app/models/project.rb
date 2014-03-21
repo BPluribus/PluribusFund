@@ -14,7 +14,7 @@ class Project < ActiveRecord::Base
   mount_uploader :uploaded_image, ProjectUploader
 
   delegate :display_status, :progress, :display_progress, :display_image, :display_expires_at, :remaining_text, :time_to_go,
-    :display_pledged, :display_goal, :remaining_days, :progress_bar, :successful_flag,
+    :display_pledged, :display_goal, :remaining_days, :progress_bar, :status_flag,
     to: :decorator
 
   has_and_belongs_to_many :channels
@@ -83,6 +83,7 @@ class Project < ActiveRecord::Base
   scope :contributed_by, ->(user_id){
     where("id IN (SELECT project_id FROM contributions b WHERE b.state = 'confirmed' AND b.user_id = ?)", user_id)
   }
+
 
   scope :from_channels, ->(channels){
     where("EXISTS (SELECT true FROM channels_projects cp WHERE cp.project_id = projects.id AND cp.channel_id = ?)", channels)
@@ -190,7 +191,7 @@ class Project < ActiveRecord::Base
   private
   def self.between_dates(attribute, starts_at, ends_at)
     return scoped unless starts_at.present? && ends_at.present?
-    where("projects.#{attribute}::date between to_date(?, 'dd/mm/yyyy') and to_date(?, 'dd/mm/yyyy')", starts_at, ends_at)
+    where("(projects.#{attribute} AT TIME ZONE '#{Time.zone.tzinfo.name}')::date between to_date(?, 'dd/mm/yyyy') and to_date(?, 'dd/mm/yyyy')", starts_at, ends_at)
   end
 
   def self.get_routes

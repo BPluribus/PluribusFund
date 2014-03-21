@@ -5,7 +5,8 @@ You cane wee our webite at: [http://www.pluribusfund.com/](http://www.pluribusfu
 
 ## Setup Development Environment
 
-1. Clone the project to your machine:
+Welcome to Catarse's source code repository.
+Our goal with opening the source code is to stimulate the creation of a community of developers around a high-quality crowdfunding platform.
 
 		$ git clone git@github.com:BPluribus/PluribusFund.git
 
@@ -114,7 +115,16 @@ You cane wee our webite at: [http://www.pluribusfund.com/](http://www.pluribusfu
 
 1. Create users
 
-		$ heroku run console
+```bash
+$ git clone https://github.com/catarse/catarse.git
+$ cd catarse
+$ cp config/database.sample.yml config/database.yml
+$ vim config/database.yml
+# change username/password and save
+$ bundle install
+$ rake db:create db:migrate db:seed
+$ rails server
+```
 
     ```
     puts "Adding Admin user..."
@@ -222,13 +232,19 @@ The current working engines are:
 If you have created a different payment engine to Catarse please contact us so we can link your engine here.
 If you want to create a payment engine please join our mailing list at http://groups.google.com/group/catarse-dev
 
-#### Coding style
-* We prefer the `{foo: 'bar'}` over `{:foo => 'bar'}`
-* We prefer the `->(foo){ bar(foo) }` over `lambda{|foo| bar(foo) }`
+## How to contribute with code
 
-#### Best practices (or how to get your pull request accepted faster)
+Before contributing, take a look at our Roadmap (https://www.pivotaltracker.com/projects/427075) and discuss your plans in our mailing list (http://groups.google.com/group/catarse-dev).
 
-We use RSpec for the tests, and the best practices are:
+Our pivotal is concerned with user visible features using user stories. But we do have some features not visible to users that are planned such as:
+* Turn Catarse into a Rails Engine with customizable views.
+* Make a installer script to guide users through initial Catarse configuration.
+
+After that, just fork the project, change what you want, and send us a pull request.
+
+### Best practices (or how to get your pull request accepted faster)
+
+* Follow this style guide: https://github.com/bbatsov/ruby-style-guide
 * Create one acceptance tests for each scenario of the feature you are trying to implement.
 * Create model and controller tests to keep 100% of code coverage at least in the new parts that you are writing.
 * Feel free to add specs to the code that is already in the repository without the proper coverage ;)
